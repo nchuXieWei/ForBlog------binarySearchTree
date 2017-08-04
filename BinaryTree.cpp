@@ -17,6 +17,8 @@ bool searchByArray(int data)
 	for (int i = 0;i < Size;++i)
 		if (Array[i] == data)
 			return true;
+		else
+			_sleep(1);  //若当前元素不是给定data，则程序暂停1毫秒，目的是为了凸显出数组查找和二叉树查找的差距
 	return false;
 }
 
@@ -29,6 +31,7 @@ bool searchByTree(BinaryTree t,int data)
 	if (t->data == data&&t->frequency > 0)
 		return true;
 
+	_sleep(1);//若当前元素不是给定data，则程序暂停1毫秒，目的是为了凸显出数组查找和二叉树查找的差距
 	if (data < t->data)
 		return searchByTree(t->left, data);
 	if (data > t->data)
